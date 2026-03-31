@@ -1,8 +1,8 @@
 "use client";
 
 import { getActiveCheckout, formatDate, isOverdue } from "@/lib/utils";
-import { BookCardProps } from "./BookCard.types";
-import { card, badge, actionButton, getStatus, STATUS_LABEL } from "./BookCard.styles";
+import { BookCardProps } from "./types";
+import { card, badge, actionButton, getStatus, STATUS_LABEL } from "./styles";
 
 export default function BookCard({ book, checkouts, members, onCheckout, onReturn }: Readonly<BookCardProps>) {
   const activeCheckout = getActiveCheckout(book.id, checkouts);

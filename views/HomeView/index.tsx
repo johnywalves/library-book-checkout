@@ -7,7 +7,7 @@ import { isOverdue, toISODate } from "@/lib/utils";
 import BookCard from "@/components/BookCard";
 import CheckoutModal from "@/components/CheckoutModal";
 import OverdueList from "@/components/OverdueList";
-import { tabButton } from "./HomeView.styles";
+import { tabButton } from "./styles";
 
 type Tab = "all" | "available" | "checkedOut";
 
@@ -127,7 +127,7 @@ function TabBar({
   checkouts: Checkout[];
 }>) {
   const availableCount = BOOKS.filter(
-    (b) => !checkouts.find((c) => c.bookId === b.id && !c.returnedDate)
+    (b) => !checkouts.some((c) => c.bookId === b.id && !c.returnedDate)
   ).length;
   const checkedOutCount = BOOKS.length - availableCount;
 

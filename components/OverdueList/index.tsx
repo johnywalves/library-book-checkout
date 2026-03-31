@@ -1,7 +1,7 @@
 "use client";
 
 import { isOverdue, formatDate } from "@/lib/utils";
-import { OverdueListProps } from "./OverdueList.types";
+import { OverdueListProps } from "./types";
 
 export default function OverdueList({ checkouts, books, members, onReturn }: Readonly<OverdueListProps>) {
   const overdueCheckouts = checkouts.filter(isOverdue);

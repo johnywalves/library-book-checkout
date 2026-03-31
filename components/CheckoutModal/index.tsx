@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { addDays, toISODate, formatDate } from "@/lib/utils";
-import { CheckoutModalProps } from "./CheckoutModal.types";
+import { CheckoutModalProps } from "./types";
 
 export default function CheckoutModal({ book, members, onConfirm, onClose }: Readonly<CheckoutModalProps>) {
   const [selectedMemberId, setSelectedMemberId] = useState("");
